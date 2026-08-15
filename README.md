@@ -1,11 +1,10 @@
 <div align="center">
 
-  <!-- PHASE 1: Theme-Aware Animated Terminal Banner -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/light.svg">
-    <img alt="Pranjal Shukla - Animated Terminal Profile" src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.svg" width="100%">
-  </picture>
+  <!-- PHASE 1: Native GitHub Theme-Aware Animated Terminal Banner -->
+  <a href="https://github.com/pranjal3872">
+    <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.svg#gh-dark-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
+    <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/light.svg#gh-light-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
+  </a>
 
   <br><br>
 
@@ -115,17 +114,11 @@ Software Engineering Student (**B.Tech CSE, AKGEC '27**) and **Software Develope
   
   <br><br>
 
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=pranjal3872&show_icons=true&theme=tokyonight&hide_rank=true&hide_border=true" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=pranjal3872&show_icons=true&theme=default&hide_rank=true&hide_border=true" />
-    <img src="https://github-readme-stats.vercel.app/api?username=pranjal3872&show_icons=true&theme=tokyonight&hide_rank=true&hide_border=true" width="49%" alt="GitHub Stats" />
-  </picture>
+  <img src="https://github-readme-stats.vercel.app/api?username=pranjal3872&show_icons=true&theme=tokyonight&hide_rank=true&hide_border=true#gh-dark-mode-only" width="49%" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=pranjal3872&show_icons=true&theme=default&hide_rank=true&hide_border=true#gh-light-mode-only" width="49%" alt="GitHub Stats" />
   &nbsp;
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=tokyonight&hide_border=true" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=default&hide_border=true" />
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=tokyonight&hide_border=true" width="49%" alt="Top Languages" />
-  </picture>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=tokyonight&hide_border=true#gh-dark-mode-only" width="49%" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=default&hide_border=true#gh-light-mode-only" width="49%" alt="Top Languages" />
 </div>
 
 ---
@@ -134,11 +127,8 @@ Software Engineering Student (**B.Tech CSE, AKGEC '27**) and **Software Develope
 ### 🐍 Contribution Activity Matrix
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake.svg">
-    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake-dark.svg" width="100%">
-  </picture>
+  <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only" alt="GitHub Contribution Snake" width="100%" />
+  <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake.svg#gh-light-mode-only" alt="GitHub Contribution Snake" width="100%" />
 </div>
 
 <br>
