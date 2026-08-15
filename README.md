@@ -1,16 +1,12 @@
 <div align="center">
 
-  <!-- PHASE 1: Animated Terminal Profile Banner -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./light.svg">
-  <img src="./light.svg" alt="Pranjal Shukla - Animated Terminal Profile" width="100%">
-</picture>
-
+  <!-- Animated Terminal Profile Banner -->
+  ![Pranjal Shukla - Animated Terminal Profile](./dark.svg#gh-dark-mode-only)
+  ![Pranjal Shukla - Animated Terminal Profile](./light.svg#gh-light-mode-only)
 
   <br><br>
 
-  <!-- PHASE 4: Clickable Social Badges (For-The-Badge Style) -->
+  <!-- Clickable Social Badges (For-The-Badge Style) -->
   <a href="https://linkedin.com/in/pranjal-shukla">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
   </a>
@@ -106,27 +102,21 @@ Software Engineering Student (**B.Tech CSE, AKGEC '27**) and **Software Develope
 
 ---
 
-<!-- PHASE 2: GitHub Activity & Analytics -->
+<!-- GitHub Activity & Analytics -->
 ### 📊 GitHub Activity & Analytics
 
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=pranjal3872&theme=tokyonight&hide_border=true&border_radius=8" width="100%" alt="GitHub Streak Stats" />
-  
-  <br><br>
-
-  <img src="https://github-readme-stats-fast.vercel.app/api?username=pranjal3872&show_icons=true&theme=tokyonight&hide_rank=true&hide_border=true" width="49%" alt="GitHub Stats" />
-  &nbsp;
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=tokyonight&hide_border=true" width="49%" alt="Top Languages" />
 </div>
 
 ---
 
-<!-- PHASE 3: Contribution Snake Animation -->
+<!-- Contribution Snake Animation -->
 ### 🐍 Contribution Activity Matrix
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only" alt="GitHub Contribution Snake" width="100%" />
-  <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake.svg#gh-light-mode-only" alt="GitHub Contribution Snake" width="100%" />
+  ![GitHub Contribution Snake](https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
+  ![GitHub Contribution Snake](https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake.svg#gh-light-mode-only)
 </div>
 
 <br>
