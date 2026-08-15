@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.svg" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.gif">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/light.gif">
+    <img alt="Pranjal Shukla - Animated Terminal Profile" src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.gif" width="100%">
+  </picture>
 </p>
 
 <br>
