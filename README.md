@@ -1,8 +1,5 @@
 <p align="center">
-  <a href="https://github.com/pranjal3872">
-    <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.gif#gh-dark-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" style="width: 100%; max-width: 100%; display: block;" />
-    <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/light.gif#gh-light-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" style="width: 100%; max-width: 100%; display: block;" />
-  </a>
+  <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.gif" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
 </p>
 
 <br>
