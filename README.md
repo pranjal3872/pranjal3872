@@ -1,12 +1,10 @@
-<div align="center">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.svg" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
+</p>
 
-  <!-- Animated Terminal Profile Banner -->
-  ![Pranjal Shukla - Animated Terminal Profile](./dark.svg#gh-dark-mode-only)
-  ![Pranjal Shukla - Animated Terminal Profile](./light.svg#gh-light-mode-only)
+<br>
 
-  <br><br>
-
-  <!-- Clickable Social Badges (For-The-Badge Style) -->
+<p align="center">
   <a href="https://linkedin.com/in/pranjal-shukla">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
   </a>
@@ -18,8 +16,7 @@
   <a href="https://github.com/pranjal3872">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge" />
   </a>
-
-</div>
+</p>
 
 <br>
 
@@ -105,18 +102,17 @@ Software Engineering Student (**B.Tech CSE, AKGEC '27**) and **Software Develope
 <!-- GitHub Activity & Analytics -->
 ### 📊 GitHub Activity & Analytics
 
-<div align="center">
+<p align="center">
   <img src="https://streak-stats.demolab.com?user=pranjal3872&theme=tokyonight&hide_border=true&border_radius=8" width="100%" alt="GitHub Streak Stats" />
-</div>
+</p>
 
 ---
 
 <!-- Contribution Snake Animation -->
 ### 🐍 Contribution Activity Matrix
 
-<div align="center">
-  ![GitHub Contribution Snake](https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
-  ![GitHub Contribution Snake](https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake.svg#gh-light-mode-only)
-</div>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/output/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake" width="100%" />
+</p>
 
 <br>
