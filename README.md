@@ -1,8 +1,12 @@
 <div align="center">
 
   <!-- PHASE 1: Animated Terminal Profile Banner -->
-  <img src="./dark.svg#gh-dark-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
-  <img src="./light.svg#gh-light-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./light.svg">
+  <img src="./light.svg" alt="Pranjal Shukla - Animated Terminal Profile" width="100%">
+</picture>
+
 
   <br><br>
 
