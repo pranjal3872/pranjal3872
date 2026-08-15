@@ -88,87 +88,87 @@
     
         <text x="440" y="175" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Subject</tspan>
-            <tspan fill="#94A3B8" dx="6">..........................</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">Pranjal Shukla</tspan>
+            <tspan fill="#94A3B8" dx="6">.......................</tspan>
         </text>
+        <text x="1125" y="175" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">Pranjal Shukla</text>
 
         <text x="440" y="202" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Role</tspan>
-            <tspan fill="#94A3B8" dx="6">...........</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">Software Engineer (AI & Full-Stack)</tspan>
+            <tspan fill="#94A3B8" dx="6">..........</tspan>
         </text>
+        <text x="1125" y="202" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">Software Engineer (AI & Full-Stack)</text>
 
         <text x="440" y="229" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Origin</tspan>
-            <tspan fill="#94A3B8" dx="6">......................</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">Ghaziabad, UP, India</tspan>
+            <tspan fill="#94A3B8" dx="6">....................</tspan>
         </text>
+        <text x="1125" y="229" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">Ghaziabad, UP, India</text>
 
         <text x="440" y="256" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Education</tspan>
-            <tspan fill="#94A3B8" dx="6">.........</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">B.Tech CSE, AKGEC (2023 - 2027)</tspan>
+            <tspan fill="#94A3B8" dx="6">........</tspan>
         </text>
+        <text x="1125" y="256" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">B.Tech CSE, AKGEC (2023 - 2027)</text>
 
         <text x="440" y="283" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Status</tspan>
-            <tspan fill="#94A3B8" dx="6">.........</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">Building RAG & AI Agents @ Mobcoder</tspan>
+            <tspan fill="#94A3B8" dx="6">........</tspan>
         </text>
+        <text x="1125" y="283" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">Building RAG & AI Agents @ Mobcoder</text>
 
         <text x="440" y="310" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">ToolChain</tspan>
-            <tspan fill="#94A3B8" dx="6">.....</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">VS Code · Git · Docker · Qdrant · Postman</tspan>
+            <tspan fill="#94A3B8" dx="6">........</tspan>
         </text>
+        <text x="1125" y="310" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">VS Code · Git · Docker · Qdrant</text>
 
         <text x="440" y="337" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Core.Lang</tspan>
-            <tspan fill="#94A3B8" dx="6">.....</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">Java · Python · JavaScript · SQL · C++</tspan>
+            <tspan fill="#94A3B8" dx="6">....</tspan>
         </text>
+        <text x="1125" y="337" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">Java · Python · JavaScript · SQL · C++</text>
 
         <text x="440" y="364" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Core.Frontend</tspan>
-            <tspan fill="#94A3B8" dx="6">.....</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">React.js · HTML5/CSS3 · Bootstrap</tspan>
+            <tspan fill="#94A3B8" dx="6">....</tspan>
         </text>
+        <text x="1125" y="364" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">React.js · HTML5/CSS3 · Bootstrap</text>
 
         <text x="440" y="391" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Core.Backend</tspan>
-            <tspan fill="#94A3B8" dx="6">.....</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">Node.js · Express · Spring Boot · FastAPI</tspan>
+            <tspan fill="#94A3B8" dx="6">....</tspan>
         </text>
+        <text x="1125" y="391" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">Node.js · Express · Spring Boot · FastAPI</text>
 
         <text x="440" y="418" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Core.Database</tspan>
-            <tspan fill="#94A3B8" dx="6">.....</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">MongoDB · PostgreSQL · Qdrant Vector DB</tspan>
+            <tspan fill="#94A3B8" dx="6">....</tspan>
         </text>
+        <text x="1125" y="418" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">MongoDB · PostgreSQL · Qdrant Vector DB</text>
 
         <text x="440" y="445" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Core.Infra</tspan>
-            <tspan fill="#94A3B8" dx="6">.....</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">LangChain · LangGraph · RAG · Vercel · Groq</tspan>
+            <tspan fill="#94A3B8" dx="6">....</tspan>
         </text>
+        <text x="1125" y="445" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">LangChain · LangGraph · RAG · Groq</text>
 
         <text x="440" y="472" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Grid.Mail</tspan>
-            <tspan fill="#94A3B8" dx="6">.............</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">3872pranjalshukla@gmail.com</tspan>
+            <tspan fill="#94A3B8" dx="6">...........</tspan>
         </text>
+        <text x="1125" y="472" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">3872pranjalshukla@gmail.com</text>
 
         <text x="440" y="499" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Grid.LinkedIn</tspan>
-            <tspan fill="#94A3B8" dx="6">....................</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">pranjal-shukla</tspan>
+            <tspan fill="#94A3B8" dx="6">.................</tspan>
         </text>
+        <text x="1125" y="499" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">in/pranjal3872</text>
 
         <text x="440" y="526" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#94A3B8">
             <tspan fill="#22D3EE" font-weight="600">Grid.GitHub</tspan>
-            <tspan fill="#94A3B8" dx="6">........................</tspan>
-            <tspan fill="#E2E8F0" font-weight="500" dx="6">pranjal3872</tspan>
+            <tspan fill="#94A3B8" dx="6">......................</tspan>
         </text>
+        <text x="1125" y="526" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="#E2E8F0" font-weight="500" text-anchor="end">pranjal3872</text>
 
     <!-- Terminal Footer -->
     <rect x="440" y="535" width="690" height="28" rx="4" fill="#1E293B" opacity="0.7" />

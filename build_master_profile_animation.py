@@ -163,7 +163,7 @@ def run_master_pipeline(dark_mode=True):
     red_color = (239, 68, 68)
 
     try:
-        font_mono = ImageFont.truetype("consola.ttf", 14)
+        font_mono = ImageFont.truetype("consola.ttf", 13)
         font_small = ImageFont.truetype("consola.ttf", 11)
         font_title = ImageFont.truetype("consolab.ttf", 14)
     except:
@@ -175,12 +175,12 @@ def run_master_pipeline(dark_mode=True):
         ("Origin", "Ghaziabad, UP, India"),
         ("Education", "B.Tech CSE, AKGEC (2023 - 2027)"),
         ("Status", "Building RAG & AI Agents @ Mobcoder"),
-        ("ToolChain", "VS Code · Git · Docker · Qdrant · Postman"),
+        ("ToolChain", "VS Code · Git · Docker · Qdrant"),
         ("Core.Lang", "Java · Python · JavaScript · SQL · C++"),
         ("Core.Frontend", "React.js · HTML5/CSS3 · Bootstrap"),
         ("Core.Backend", "Node.js · Express · Spring Boot · FastAPI"),
         ("Core.Database", "MongoDB · PostgreSQL · Qdrant Vector DB"),
-        ("Core.Infra", "LangChain · LangGraph · RAG · Vercel · Groq"),
+        ("Core.Infra", "LangChain · LangGraph · RAG · Groq"),
         ("Grid.Mail", "3872pranjalshukla@gmail.com"),
         ("Grid.LinkedIn", "in/pranjal3872"),
         ("Grid.GitHub", "pranjal3872")
@@ -258,6 +258,7 @@ def run_master_pipeline(dark_mode=True):
             for tx, ty in cur_travellers:
                 draw.rectangle([tx, ty, tx + 2.2, ty + 2.2], fill=traveller_color)
 
+        # SYSTEM.INFO Panel (x=425 to 1145)
         draw.rounded_rectangle([425, 75, 1145, 575], radius=8, fill=bg_color, outline=border_color, width=1)
         draw.text((440, 88), "SYSTEM.INFO // CANDIDATE SPECIFICATION", fill=accent_color, font=font_small)
         draw.text((1130, 88), "STATUS: ACTIVE", fill=dim_text, font=font_small, anchor="ra")
@@ -267,13 +268,27 @@ def run_master_pipeline(dark_mode=True):
         line_height = 28
         for r_i, (label, val) in enumerate(rows):
             cur_y = start_y + (r_i * line_height)
-            dots_count = max(4, int(42 - len(label) - len(val) * 0.8))
-            dot_leader = "." * dots_count
             
+            # Left label
             draw.text((440, cur_y), label, fill=border_color, font=font_mono)
-            draw.text((560, cur_y), dot_leader, fill=dim_text, font=font_mono)
-            draw.text((820, cur_y), val, fill=text_color, font=font_mono)
+            
+            # Right-aligned value locked at x=1125 (guaranteeing 20px padding inside 1145 right border)
+            draw.text((1125, cur_y), val, fill=text_color, font=font_mono, anchor="ra")
+            
+            # Compute leader dots between label and value
+            try:
+                l_bbox = draw.textbbox((440, cur_y), label, font=font_mono)
+                v_bbox = draw.textbbox((1125, cur_y), val, font=font_mono, anchor="ra")
+                leader_start = l_bbox[2] + 10
+                leader_end = v_bbox[0] - 10
+                if leader_end > leader_start + 20:
+                    dots_num = int((leader_end - leader_start) / 8)
+                    dot_str = "." * dots_num
+                    draw.text((leader_start, cur_y), dot_str, fill=dim_text, font=font_mono)
+            except:
+                pass
 
+        # Terminal Footer
         draw.rounded_rectangle([440, 530, 1130, 560], radius=4, fill=card_bg)
         cursor_str = "█" if frame_idx % 2 == 0 else " "
         draw.text((450, 538), f"$ cat experience.log | grep 'Mobcoder Intern' {cursor_str}", fill=accent_color, font=font_mono)

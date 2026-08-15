@@ -89,14 +89,14 @@ def generate_svg(dark_mode=True):
         ("Origin", "Ghaziabad, UP, India"),
         ("Education", "B.Tech CSE, AKGEC (2023 - 2027)"),
         ("Status", "Building RAG & AI Agents @ Mobcoder"),
-        ("ToolChain", "VS Code · Git · Docker · Qdrant · Postman"),
+        ("ToolChain", "VS Code · Git · Docker · Qdrant"),
         ("Core.Lang", "Java · Python · JavaScript · SQL · C++"),
         ("Core.Frontend", "React.js · HTML5/CSS3 · Bootstrap"),
         ("Core.Backend", "Node.js · Express · Spring Boot · FastAPI"),
         ("Core.Database", "MongoDB · PostgreSQL · Qdrant Vector DB"),
-        ("Core.Infra", "LangChain · LangGraph · RAG · Vercel · Groq"),
+        ("Core.Infra", "LangChain · LangGraph · RAG · Groq"),
         ("Grid.Mail", "3872pranjalshukla@gmail.com"),
-        ("Grid.LinkedIn", "pranjal-shukla"),
+        ("Grid.LinkedIn", "in/pranjal3872"),
         ("Grid.GitHub", "pranjal3872")
     ]
     
@@ -106,14 +106,14 @@ def generate_svg(dark_mode=True):
     
     for i, (label, val) in enumerate(rows):
         cur_y = start_y + (i * line_height)
-        dot_leader = "." * max(5, int(45 - len(label) - len(val) * 0.85))
+        dot_leader = "." * max(4, int(42 - len(label) - len(val) * 0.8))
         
         row_str = f"""
         <text x="440" y="{cur_y}" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="{dim_text}">
             <tspan fill="{border_color}" font-weight="600">{label}</tspan>
             <tspan fill="{dim_text}" dx="6">{dot_leader}</tspan>
-            <tspan fill="{text_color}" font-weight="500" dx="6">{val}</tspan>
-        </text>"""
+        </text>
+        <text x="1125" y="{cur_y}" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="{text_color}" font-weight="500" text-anchor="end">{val}</text>"""
         info_xml.append(row_str)
         
     info_panel_str = "\n".join(info_xml)
