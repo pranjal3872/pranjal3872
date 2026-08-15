@@ -1,9 +1,8 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.gif">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/light.gif">
-    <img alt="Pranjal Shukla - Animated Terminal Profile" src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.gif" width="100%">
-  </picture>
+  <a href="https://github.com/pranjal3872">
+    <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.gif#gh-dark-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" style="width: 100%; max-width: 100%; display: block;" />
+    <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/light.gif#gh-light-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" style="width: 100%; max-width: 100%; display: block;" />
+  </a>
 </p>
 
 <br>
@@ -107,7 +106,9 @@ Software Engineering Student (**B.Tech CSE, AKGEC '27**) and **Software Develope
 ### 📊 GitHub Activity & Analytics
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=pranjal3872&theme=tokyonight&hide_border=true&border_radius=8" width="100%" alt="GitHub Streak Stats" />
+  <img src="https://github-readme-stats-fast.vercel.app/api?username=pranjal3872&show_icons=true&theme=tokyonight&hide_rank=true&hide_border=true" width="49%" alt="GitHub Stats" />
+  &nbsp;
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=tokyonight&hide_border=true" width="49%" alt="Top Languages" />
 </p>
 
 ---
