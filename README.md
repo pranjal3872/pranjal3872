@@ -1,10 +1,8 @@
 <div align="center">
 
-  <!-- PHASE 1: Native GitHub Theme-Aware Animated Terminal Banner -->
-  <a href="https://github.com/pranjal3872">
-    <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.svg#gh-dark-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
-    <img src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/light.svg#gh-light-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
-  </a>
+  <!-- PHASE 1: Animated Terminal Profile Banner -->
+  <img src="./dark.svg#gh-dark-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
+  <img src="./light.svg#gh-light-mode-only" alt="Pranjal Shukla - Animated Terminal Profile" width="100%" />
 
   <br><br>
 
@@ -104,21 +102,17 @@ Software Engineering Student (**B.Tech CSE, AKGEC '27**) and **Software Develope
 
 ---
 
-<!-- PHASE 2: Self-Hosted GitHub Readme Stats & Streak Cards -->
+<!-- PHASE 2: GitHub Activity & Analytics -->
 ### 📊 GitHub Activity & Analytics
-
-> *Note: Stats cards use self-hosted instance deployment to ensure high reliability and zero rate limits. `hide_rank=true` is enabled as rank metrics are heavily star-weighted rather than reflecting overall code volume.*
 
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=pranjal3872&theme=tokyonight&hide_border=true&border_radius=8" width="100%" alt="GitHub Streak Stats" />
   
   <br><br>
 
-  <img src="https://github-readme-stats.vercel.app/api?username=pranjal3872&show_icons=true&theme=tokyonight&hide_rank=true&hide_border=true#gh-dark-mode-only" width="49%" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api?username=pranjal3872&show_icons=true&theme=default&hide_rank=true&hide_border=true#gh-light-mode-only" width="49%" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-fast.vercel.app/api?username=pranjal3872&show_icons=true&theme=tokyonight&hide_rank=true&hide_border=true" width="49%" alt="GitHub Stats" />
   &nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=tokyonight&hide_border=true#gh-dark-mode-only" width="49%" alt="Top Languages" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=default&hide_border=true#gh-light-mode-only" width="49%" alt="Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=pranjal3872&layout=compact&theme=tokyonight&hide_border=true" width="49%" alt="Top Languages" />
 </div>
 
 ---
