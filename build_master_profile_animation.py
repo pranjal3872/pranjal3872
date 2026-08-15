@@ -72,13 +72,11 @@ def extract_portrait_dots(image_path, target_w=200, target_h=225, dark_mode=True
 # ---------------------------------------------------------
 def generate_python_logo_points(num_points=900, cx=230, cy=340, scale=110):
     pts = []
-    # Top snake body
     for t in np.linspace(0, 2*np.pi, num_points // 2):
         r = scale * (0.6 + 0.25 * np.cos(2*t))
         x = cx + r * np.cos(t) - 15
         y = cy + r * np.sin(t) - 25
         pts.append((x, y))
-    # Bottom snake body
     for t in np.linspace(0, 2*np.pi, num_points // 2):
         r = scale * (0.6 + 0.25 * np.sin(2*t))
         x = cx + r * np.cos(t) + 15
@@ -88,11 +86,9 @@ def generate_python_logo_points(num_points=900, cx=230, cy=340, scale=110):
 
 def generate_react_logo_points(num_points=900, cx=230, cy=340, rx=110, ry=42):
     pts = []
-    # Nucleus
     for t in np.linspace(0, 2*np.pi, 150):
         r = 22
         pts.append((cx + r * np.cos(t), cy + r * np.sin(t)))
-    # 3 Rotated Orbit Ellipses (0deg, 60deg, 120deg)
     angles = [0, math.pi/3, 2*math.pi/3]
     pts_per_orbit = (num_points - 150) // 3
     for angle in angles:
@@ -106,16 +102,13 @@ def generate_react_logo_points(num_points=900, cx=230, cy=340, rx=110, ry=42):
 
 def generate_code_glyph_points(num_points=900, cx=230, cy=340, size=100):
     pts = []
-    # Left bracket <
     l_pts = num_points // 3
     for t in np.linspace(0, 1, l_pts // 2):
         pts.append((cx - 70 + t * 45, cy - 60 + t * 60))
         pts.append((cx - 25 - t * 45, cy + t * 60))
-    # Slash /
     s_pts = num_points // 3
     for t in np.linspace(0, 1, s_pts):
         pts.append((cx + 15 - t * 30, cy - 70 + t * 140))
-    # Right bracket >
     r_pts = num_points - len(pts)
     for t in np.linspace(0, 1, r_pts // 2):
         pts.append((cx + 30 + t * 45, cy - 60 + t * 60))
@@ -139,33 +132,25 @@ def run_master_pipeline(dark_mode=True):
     
     portrait_dots = extract_portrait_dots("PROFILE2.png", dark_mode=dark_mode)
     num_portrait = len(portrait_dots)
-    print(f"Extracted {num_portrait} Floyd-Steinberg dither dots.")
 
-    # Sample ~900 dots for Travellers layer
     np.random.seed(42)
     sample_indices = np.random.choice(num_portrait, size=900, replace=False)
     travellers_p0 = portrait_dots[sample_indices].copy()
 
-    # Generate Logo Point Sets
     logo1_raw = generate_python_logo_points(num_points=900)
     logo2_raw = generate_react_logo_points(num_points=900)
     logo3_raw = generate_code_glyph_points(num_points=900)
 
-    # Optimal Transport Matching for Smooth Shortest Paths
-    print("Computing Optimal Transport linear assignment paths...")
     travellers_l1 = match_optimal_transport(travellers_p0, logo1_raw)
     travellers_l2 = match_optimal_transport(travellers_l1, logo2_raw)
     travellers_l3 = match_optimal_transport(travellers_l2, logo3_raw)
 
-    # 94 Drift Bands with Per-Dot Noise (sigma = 4)
     noisy_portrait = portrait_dots + np.random.normal(0, 4.0, portrait_dots.shape)
     y_coords = noisy_portrait[:, 1]
     band_assignments = np.digitize(y_coords, np.linspace(135, 545, 94))
 
-    # Centroid of Logo 1
     l1_centroid = np.mean(travellers_l1, axis=0)
 
-    # Render Frames for 14.2s Master Loop + Intro
     width, height = 1180, 610
     bg_color = (10, 16, 31) if dark_mode else (248, 250, 252)
     card_bg = (30, 41, 59) if dark_mode else (226, 232, 240)
@@ -197,21 +182,19 @@ def run_master_pipeline(dark_mode=True):
         ("Core.Database", "MongoDB · PostgreSQL · Qdrant Vector DB"),
         ("Core.Infra", "LangChain · LangGraph · RAG · Vercel · Groq"),
         ("Grid.Mail", "3872pranjalshukla@gmail.com"),
-        ("Grid.LinkedIn", "pranjal-shukla"),
+        ("Grid.LinkedIn", "in/pranjal3872"),
         ("Grid.GitHub", "pranjal3872")
     ]
 
     total_frames = 30
     gif_frames = []
 
-    print(f"Rendering {total_frames} master animation frames...")
     for frame_idx in range(total_frames):
-        t_phase = frame_idx / total_frames # 0.0 to 1.0
+        t_phase = frame_idx / total_frames
 
         img = Image.new("RGB", (width, height), bg_color)
         draw = ImageDraw.Draw(img)
 
-        # Window Shell & UI Header
         draw.rounded_rectangle([10, 10, 1170, 600], radius=12, fill=bg_color, outline=border_color, width=2)
         draw.rounded_rectangle([10, 10, 1170, 50], radius=12, fill=card_bg, outline=border_color, width=1)
         draw.rectangle([10, 30, 1170, 50], fill=card_bg)
@@ -229,14 +212,11 @@ def run_master_pipeline(dark_mode=True):
         draw.text((1034, 25), "LIVE", fill=red_color, font=font_small)
         draw.text((1070, 25), "@pranjal3872", fill=border_color, font=font_small)
 
-        # VISUAL.MAP Frame
         draw.rounded_rectangle([35, 75, 410, 575], radius=8, fill=bg_color, outline=border_color, width=1)
         draw.text((50, 88), "VISUAL.MAP // PORTRAIT DITHER", fill=border_color, font=font_small)
         draw.text((390, 88), "200x225 GRID", fill=dim_text, font=font_small, anchor="ra")
         draw.line([35, 105, 410, 105], fill=border_color, width=1)
 
-        # --- LAYER 1: PORTRAIT DITHER DRIFT BANDS ---
-        # Phase timing: Portrait hold (0.0..0.2), Drift dissolve (0.2..0.8), Return (0.8..1.0)
         if t_phase < 0.2:
             drift_factor = 0.0
             portrait_alpha = 1.0
@@ -254,20 +234,13 @@ def run_master_pipeline(dark_mode=True):
                 continue
             b_dots = portrait_dots[band_mask]
             
-            # Translate toward Logo 1 centroid
             vec = (l1_centroid - np.mean(b_dots, axis=0)) * drift_factor
             translated_dots = b_dots + vec
             
             if random.random() < portrait_alpha:
-                for x, y in translated_dots[::2]: # Crisp dot render
+                for x, y in translated_dots[::2]:
                     draw.rectangle([x, y, x + 1.8, y + 1.8], fill=portrait_dot_color)
 
-        # --- LAYER 2: TRAVELLER DOTS (OPTIMAL TRANSPORT MORPHING) ---
-        # Phase 0.0..0.25: Hidden
-        # Phase 0.25..0.45: Morph to Python Logo
-        # Phase 0.45..0.65: Morph to React Logo
-        # Phase 0.65..0.85: Morph to Code Glyph < />
-        # Phase 0.85..1.0: Return to Portrait
         if t_phase >= 0.2:
             if t_phase < 0.4:
                 interp = (t_phase - 0.2) / 0.2
@@ -285,7 +258,6 @@ def run_master_pipeline(dark_mode=True):
             for tx, ty in cur_travellers:
                 draw.rectangle([tx, ty, tx + 2.2, ty + 2.2], fill=traveller_color)
 
-        # SYSTEM.INFO Panel
         draw.rounded_rectangle([425, 75, 1145, 575], radius=8, fill=bg_color, outline=border_color, width=1)
         draw.text((440, 88), "SYSTEM.INFO // CANDIDATE SPECIFICATION", fill=accent_color, font=font_small)
         draw.text((1130, 88), "STATUS: ACTIVE", fill=dim_text, font=font_small, anchor="ra")
@@ -302,7 +274,6 @@ def run_master_pipeline(dark_mode=True):
             draw.text((560, cur_y), dot_leader, fill=dim_text, font=font_mono)
             draw.text((820, cur_y), val, fill=text_color, font=font_mono)
 
-        # Terminal Footer
         draw.rounded_rectangle([440, 530, 1130, 560], radius=4, fill=card_bg)
         cursor_str = "█" if frame_idx % 2 == 0 else " "
         draw.text((450, 538), f"$ cat experience.log | grep 'Mobcoder Intern' {cursor_str}", fill=accent_color, font=font_mono)
@@ -314,7 +285,7 @@ def run_master_pipeline(dark_mode=True):
         gif_filename,
         save_all=True,
         append_images=gif_frames[1:],
-        duration=140, # 140ms per frame ~ 14.2s master loop
+        duration=140,
         loop=0
     )
     print(f"Master animation GIF saved to {gif_filename}!")

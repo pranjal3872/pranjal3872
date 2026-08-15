@@ -9,12 +9,12 @@
 <br>
 
 <p align="center">
-  <a href="https://linkedin.com/in/pranjal-shukla">
+  <a href="https://www.linkedin.com/in/pranjal3872/">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
   </a>
   &nbsp;&nbsp;
   <a href="mailto:3872pranjalshukla@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge" />
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge" />
   </a>
   &nbsp;&nbsp;
   <a href="https://github.com/pranjal3872">
@@ -33,7 +33,7 @@ Software Engineering Student (**B.Tech CSE, AKGEC '27**) and **Software Develope
 - 🔭 **Current Focus**: Architecting agentic RAG workflows, MCP servers, and LLM-powered backend services.
 - ⚡ **Internship**: Software Developer Intern `@Mobcoder` — building production MERN & AI applications.
 - 🚀 **Projects**: Built an end-to-end **AI Document Assistant (RAG)** and **ATS Resume Evaluation Platform**.
-- 📬 **Get in Touch**: [`3872pranjalshukla@gmail.com`](mailto:3872pranjalshukla@gmail.com) | [LinkedIn](https://linkedin.com/in/pranjal-shukla)
+- 📬 **Get in Touch**: [`3872pranjalshukla@gmail.com`](mailto:3872pranjalshukla@gmail.com) | [LinkedIn Profile](https://www.linkedin.com/in/pranjal3872/)
 
 ---
 
