@@ -6,19 +6,16 @@ from PIL import Image, ImageEnhance, ImageOps, ImageFilter
 def build_dither_dots(image_path, dark_mode=True, grid_w=300, grid_h=340):
     img = Image.open(image_path).convert("RGBA")
     
-    # Fill white background for RGBA
     bg = Image.new("RGBA", img.size, (255, 255, 255, 255))
     comp = Image.alpha_composite(bg, img).convert("RGB")
     
-    # Head & Shoulders Crop
     w, h = comp.size
     crop_box = (int(w * 0.08), int(h * 0.04), int(w * 0.92), int(h * 0.92))
     cropped = comp.crop(crop_box)
     
-    # Resize
+    grid_w, grid_h = 200, 225
     resized = cropped.resize((grid_w, grid_h), Image.Resampling.LANCZOS)
     
-    # Contrast 1.3x with autocontrast(cutoff=1) + UnsharpMask
     gray = resized.convert("L")
     auto_gray = ImageOps.autocontrast(gray, cutoff=1)
     sharp_gray = auto_gray.filter(ImageFilter.UnsharpMask(radius=3, percent=140))
@@ -26,8 +23,6 @@ def build_dither_dots(image_path, dark_mode=True, grid_w=300, grid_h=340):
     contrasted = enhancer.enhance(1.3)
     
     arr = np.array(contrasted, dtype=float)
-    
-    # Fast 1-bit Floyd-Steinberg Dithering
     img_data = arr.copy()
     dots = []
     
@@ -40,26 +35,21 @@ def build_dither_dots(image_path, dark_mode=True, grid_w=300, grid_h=340):
             old_val = img_data[y, x]
             
             if dark_mode:
-                # In dark mode, subject/lit parts produce dots
-                new_val = 255 if old_val > 125 else 0
-                if arr[y, x] > 235: # Background threshold for dark mode
+                new_val = 255 if old_val > 120 else 0
+                if arr[y, x] > 230:
                     new_val = 0
                 is_dot = (new_val == 255)
             else:
-                # In light mode, dark parts produce dots
-                new_val = 0 if old_val < 130 else 255
+                new_val = 0 if old_val < 135 else 255
                 is_dot = (new_val == 0)
                 
             err = old_val - new_val
             
             if is_dot:
-                # Add dot coordinate (mapped to terminal frame x: 60..400, y: 130..530)
-                # Map x to 60 + x * (340 / 300), y to 130 + y * (380 / 340)
                 px = 65 + (x / grid_w) * 330
                 py = 135 + (y / grid_h) * 410
                 dots.append((round(px, 1), round(py, 1)))
                 
-            # Error distribution
             if 0 <= x + direction < grid_w:
                 img_data[y, x + direction] += err * (7 / 16)
             if y + 1 < grid_h:
@@ -83,10 +73,16 @@ def generate_svg(dark_mode=True):
     dots = build_dither_dots("PROFILE2.png", dark_mode=dark_mode)
     print(f"Generated {len(dots)} dither dots for {'dark' if dark_mode else 'light'} mode SVG.")
     
-    # Path data for crisp dots
-    path_runs = " ".join([f"M{x},{y}h1.6v1.6h-1.6z" for x, y in dots[::2]]) # sample for optimization & crisp render (~8k-10k dots)
+    chunk_size = 800
+    path_tags = []
+    
+    for i in range(0, len(dots), chunk_size):
+        chunk = dots[i:i + chunk_size]
+        path_d = " ".join([f"M{x},{y}h1.8v1.8h-1.8z" for x, y in chunk])
+        path_tags.append(f'<path d="{path_d}" fill="{portrait_dot_color}" shape-rendering="crispEdges" />')
 
-    # Info panel data
+    path_xml = "\n        ".join(path_tags)
+
     rows = [
         ("Subject", "Pranjal Shukla"),
         ("Role", "Software Engineer (AI & Full-Stack)"),
@@ -110,11 +106,10 @@ def generate_svg(dark_mode=True):
     
     for i, (label, val) in enumerate(rows):
         cur_y = start_y + (i * line_height)
-        # Compute dotted leader length based on label length
         dot_leader = "." * max(5, int(45 - len(label) - len(val) * 0.85))
         
         row_str = f"""
-        <text x="440" y="{cur_y}" font-family="Consolas, 'Fira Code', Monaco, monospace" font-size="13.5" fill="{dim_text}">
+        <text x="440" y="{cur_y}" font-family="Consolas, Monaco, monospace" font-size="13.5" fill="{dim_text}">
             <tspan fill="{border_color}" font-weight="600">{label}</tspan>
             <tspan fill="{dim_text}" dx="6">{dot_leader}</tspan>
             <tspan fill="{text_color}" font-weight="500" dx="6">{val}</tspan>
@@ -131,21 +126,16 @@ def generate_svg(dark_mode=True):
                 50% {{ opacity: 0.3; }}
                 100% {{ opacity: 1; }}
             }}
-            @keyframes ditherFade {{
-                0% {{ opacity: 0; }}
-                100% {{ opacity: 1; }}
-            }}
             .live-dot {{ animation: pulse 2s infinite ease-in-out; }}
-            .portrait-layer {{ animation: ditherFade 2.5s ease-out forwards; }}
         </style>
-        <linearGradient id="panelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="panelGrad_{'dark' if dark_mode else 'light'}" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="{bg_color}" />
             <stop offset="100%" stop-color="{card_bg}" />
         </linearGradient>
     </defs>
 
     <!-- Outer Window Frame -->
-    <rect x="10" y="10" width="1160" height="590" rx="12" fill="url(#panelGrad)" stroke="{border_color}" stroke-width="1.5" />
+    <rect x="10" y="10" width="1160" height="590" rx="12" fill="url(#panelGrad_{'dark' if dark_mode else 'light'})" stroke="{border_color}" stroke-width="1.5" />
 
     <!-- Terminal Header Bar -->
     <path d="M 10,22 A 12,12 0 0,1 22,10 L 1158,10 A 12,12 0 0,1 1170,22 L 1170,50 L 10,50 Z" fill="{card_bg}" stroke="{border_color}" stroke-width="1" />
@@ -156,7 +146,7 @@ def generate_svg(dark_mode=True):
     <circle cx="75" cy="30" r="6" fill="#10B981" />
 
     <!-- Window Title -->
-    <text x="590" y="34" font-family="Consolas, 'Fira Code', Monaco, monospace" font-size="14" fill="{dim_text}" text-anchor="middle" font-weight="600">profile.sh --live</text>
+    <text x="590" y="34" font-family="Consolas, Monaco, monospace" font-size="14" fill="{dim_text}" text-anchor="middle" font-weight="600">profile.sh --live</text>
 
     <!-- Live Status Indicator & Handle Pill -->
     <g transform="translate(1010, 20)">
@@ -169,12 +159,12 @@ def generate_svg(dark_mode=True):
     <!-- Left Box: VISUAL.MAP Frame -->
     <rect x="35" y="75" width="375" height="500" rx="8" fill="{bg_color}" stroke="{border_color}" stroke-width="1" stroke-dasharray="4 4" />
     <text x="50" y="98" font-family="Consolas, monospace" font-size="12" fill="{border_color}" font-weight="700" letter-spacing="1">VISUAL.MAP // PORTRAIT DITHER</text>
-    <text x="390" y="98" font-family="Consolas, monospace" font-size="11" fill="{dim_text}" text-anchor="end">300x340 GRID</text>
+    <text x="390" y="98" font-family="Consolas, monospace" font-size="11" fill="{dim_text}" text-anchor="end">200x225 GRID</text>
     <line x1="35" y1="110" x2="410" y2="110" stroke="{border_color}" stroke-width="0.7" opacity="0.5" />
 
-    <!-- Dithered Portrait Dots -->
-    <g class="portrait-layer">
-        <path d="{path_runs}" fill="{portrait_dot_color}" shape-rendering="crispEdges" />
+    <!-- Dithered Portrait Dots (Chunked Paths) -->
+    <g>
+        {path_xml}
     </g>
 
     <!-- Right Box: SYSTEM.INFO Readout -->
