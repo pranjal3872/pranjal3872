@@ -2,9 +2,9 @@
 
   <!-- PHASE 1: Theme-Aware Animated Terminal Banner -->
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="light.svg">
-    <img alt="Pranjal Shukla - Animated Terminal Profile" src="dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/light.svg">
+    <img alt="Pranjal Shukla - Animated Terminal Profile" src="https://raw.githubusercontent.com/pranjal3872/pranjal3872/main/dark.svg" width="100%">
   </picture>
 
   <br><br>
